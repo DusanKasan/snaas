@@ -73,3 +73,7 @@ ul>li.selected {
     font-size: 2.5em;
     color: #3498db;
 }
+
+.output-word {
+    color: #ececec;
+}

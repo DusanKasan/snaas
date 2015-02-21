@@ -3,42 +3,42 @@ snaas = function () {
     var nounsUlSelector = '#nouns';
     var verbsUlSelector = '#verbs';
     var nouns = {
-        Attribute: 'Attribute',
-        Base: 'Base',
-        Bridge: 'Bridge',
-        Bucket: 'Bucket',
-        Chain: 'Chain',
-        Collection: 'Collection',
-        Configuration: 'Configuration',
-        Context: 'Context',
-        Command: 'Command',
-        Composite: 'Composite',
-        Element: 'Element',
-        Entity: 'Entity',
-        Exception: 'Exception',
-        Field: 'Field',
-        Flag: 'Flag',
+        Attributes: 'Attribute',
+        Bases: 'Base',
+        Bridges: 'Bridge',
+        Buckets: 'Bucket',
+        Chains: 'Chain',
+        Collections: 'Collection',
+        Configurations: 'Configuration',
+        Contexts: 'Context',
+        Commands: 'Command',
+        Composites: 'Composite',
+        Elements: 'Element',
+        Entities: 'Entity',
+        Exceptions: 'Exception',
+        Fields: 'Field',
+        Flags: 'Flag',
         Flyweight: 'Flyweight',
-        Identity: 'Identity',
-        Info: 'Info',
-        Item: 'Item',
-        Key: 'Key',
-        Method: 'Method',
-        Node: 'Node',
-        NullObject: 'NullObject',
-        Option: 'Option',
-        Proxy: 'Proxy',
-        Protocol: 'Protocol',
-        Peer: 'Peer',
-        QueryRecord: 'QueryRecord',
-        Service: 'Service',
-        Strategy: 'Strategy',
-        Style: 'Style',
-        State: 'State',
-        Target: 'Target',
-        TemplateMethod: 'TemplateMethod',
-        Type: 'Type',
-        Unit: 'Unit'
+        Identities: 'Identity',
+        Information: 'Info',
+        Items: 'Item',
+        Keys: 'Key',
+        Methods: 'Method',
+        Nodes: 'Node',
+        NullObjects: 'NullObject',
+        Options: 'Option',
+        Proxies: 'Proxy',
+        Protocols: 'Protocol',
+        Peers: 'Peer',
+        QueryRecords: 'QueryRecord',
+        Services: 'Service',
+        Strategies: 'Strategy',
+        Styles: 'Style',
+        States: 'State',
+        Targets: 'Target',
+        TemplateMethods: 'TemplateMethod',
+        Types: 'Type',
+        Units: 'Unit'
     };
     var verbs = {
         Adapt: 'Adapter',
@@ -167,11 +167,17 @@ snaas = function () {
         }
 
         $listItem.closest('.input-list').data('input', value);
-        $('#output').html(getOutput());
+        $listItem.closest('.input-list').data('value', $listItem.text());
+        updateOutput();
     }
 
-    function getOutput() {
-        return $('#nouns').data('input') + $('#verbs').data('input');
+    function updateOutput() {
+        var noun = $('#nouns').data('input');
+        var verb = $('#verbs').data('input');
+        $('#output').html(noun + verb);
+
+        $('#noun').html($('#nouns').data('value'));
+        $('#verb').html($('#verbs').data('value'));
     }
 
     function selectElementContents(el) {
