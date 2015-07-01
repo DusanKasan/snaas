@@ -81,7 +81,7 @@ snaas = function () {
         Insert: 'Inserter',
         Inform: 'Informer',
         Import: 'Importer',
-        Iterate: 'Iterator',
+        'Iterate over': 'Iterator',
         Listen: 'Listener',
         Limit: 'Limiter',
         Machine: 'Machine',
